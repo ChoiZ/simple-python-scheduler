@@ -26,12 +26,10 @@ class Track:
         self.duration = duration
 
 def read_folder(folder):
-    print "reading "+folder
     for song_file in os.listdir(folder):
         artist = os.path.splitext(song_file)[0].split(' - ')[0]
         title = os.path.splitext(song_file)[0].split(' - ')[1]
         filename = os.path.abspath(song_file)
-        print os.path.splitext(song_file)[0].split(' - ')
         bac.append(Track(artist, title, filename))
         artists.append(artist)
         titles.append(title)
@@ -46,14 +44,8 @@ def get_track(i):
 
 read_folder("music")
 
-
-print len(artists)
-
 nb_artist = len(list(set(artists)))/2
 nb_titles = len(list(set(titles)))/2
-
-print "nb_artist %d " % nb_artist
-print "nb_titles %d " % nb_titles
 
 if separation_artist == 0:
     error.append("Warning: separation_artist must be set and greater than 0.")
@@ -81,8 +73,6 @@ m3u = open(playlist_path, 'w')
 m3u.write('#EXTM3U\n')
 
 for song in playlist:
-    print "Artiste : "+song.artist
-    print "Titre : "+song.title
     m3u.write('#EXTINF:%s,%s - %s\n' % ('-1',song.artist,song.title))
     m3u.write(song.filename+'\n')
 m3u.close()
