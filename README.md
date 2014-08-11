@@ -5,7 +5,7 @@ simple-python-scheduler
 
 - run:
 
-```php
+```python
 py scheduler.py
 ```
 
