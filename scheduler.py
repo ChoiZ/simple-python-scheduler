@@ -1,5 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+# MIT License. Copyright (c) 2014 François LASSERRE.
+# vim: et ts=4 sts=4 sw=4
 
 import os
 import sys
