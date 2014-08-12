@@ -45,8 +45,8 @@ def get_track(i):
 
 read_folder("music")
 
-nb_artist = len(list(set(artists)))/2
-nb_titles = len(list(set(titles)))/2
+max_artist = len(list(set(artists)))/2
+max_titles = len(list(set(titles)))/2
 
 if separation_artist == 0:
     error.append("Warning: separation_artist must be set and greater than 0.")
@@ -56,6 +56,10 @@ if playlist_path != '':
     error.append("Warning: playlist_path must be set and not empty.")
 if playlist_size == 0:
     error.append("Warning: playlist_size must be set and greater than 0.")
+if max_artist < separation_artist:
+    error.append('Warning: separation_artist is too high: %d use a value between 1 and %d' % (separation_artist, max_artist))
+if max_titles < separation_titles:
+    error.append('Warning: separation_titles is too high: %d use a value between 1 and %d' % (separation_titles, max_titles))
 
 if len(error) != 0:
     for err in error:
