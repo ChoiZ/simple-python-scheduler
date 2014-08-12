@@ -58,8 +58,8 @@ if playlist_size == 0:
     error.append("Warning: playlist_size must be set and greater than 0.")
 if max_artist < separation_artist:
     error.append('Warning: separation_artist is too high: %d use a value between 1 and %d' % (separation_artist, max_artist))
-if max_titles < separation_titles:
-    error.append('Warning: separation_titles is too high: %d use a value between 1 and %d' % (separation_titles, max_titles))
+if max_titles < separation_title:
+    error.append('Warning: separation_title is too high: %d use a value between 1 and %d' % (separation_title, max_titles))
 
 if len(error) != 0:
     for err in error:
