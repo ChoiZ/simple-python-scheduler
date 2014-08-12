@@ -27,8 +27,9 @@ class Track:
 
 def read_folder(folder):
     for song_file in os.listdir(folder):
-        artist = os.path.splitext(song_file)[0].split(' - ')[0]
-        title = os.path.splitext(song_file)[0].split(' - ')[1]
+        split = os.path.splitext(song_file)[0].split(' - ')
+        artist = split[0]
+        title = split[1]
         filename = os.path.abspath(song_file)
         bac.append(Track(artist, title, filename))
         artists.append(artist)
