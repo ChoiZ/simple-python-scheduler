@@ -11,6 +11,7 @@ py scheduler.py
 
 ## ChangeLog
 
+- 2016-02-13 - Update playlist length by number of elements in folder (Version 0.0.2)
 - 2014-08-11 - First commit (Version 0.0.1)
 
 
