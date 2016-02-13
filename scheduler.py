@@ -5,10 +5,11 @@ import os
 import sys
 from random import shuffle
 
-separation_artist = 5
-separation_title = 5
-playlist_path = 'playlist.m3u'
-playlist_size = 100
+tracks_path = "/home/user/tracks_folder/"
+separation_artist = 10
+separation_title = 10
+playlist_path = '/home/user/playlist_folder/playlist.m3u'
+playlist_size = len(os.listdir(tracks_path))
 
 nb_pl = 0
 
@@ -30,7 +31,7 @@ def read_folder(folder):
         split = os.path.splitext(song_file)[0].split(' - ')
         artist = split[0]
         title = split[1]
-        filename = os.path.abspath(song_file)
+        filename = folder+song_file
         bac.append(Track(artist, title, filename))
         artists.append(artist)
         titles.append(title)
@@ -43,7 +44,7 @@ def get_track(i):
     print track.artist
     playlist.append(track)
 
-read_folder("music")
+read_folder(tracks_path)
 
 max_artist = len(list(set(artists)))/2
 max_titles = len(list(set(titles)))/2
@@ -52,8 +53,6 @@ if separation_artist == 0:
     error.append("Warning: separation_artist must be set and greater than 0.")
 if separation_title == 0:
     error.append("Warning: separation_title must be set and greater than 0.")
-if playlist_path != '':
-    error.append("Warning: playlist_path must be set and not empty.")
 if playlist_size == 0:
     error.append("Warning: playlist_size must be set and greater than 0.")
 if max_artist < separation_artist:
