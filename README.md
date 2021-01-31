@@ -6,14 +6,21 @@ simple-python-scheduler
 - run:
 
 ```python
-py scheduler.py
+python scheduler.py
 ```
 
 ## ChangeLog
 
+- 2021-01-31 - Fixes for Python3 (Version 0.0.3)
 - 2016-02-13 - Update playlist length by number of elements in folder (Version 0.0.2)
 - 2014-08-11 - First commit (Version 0.0.1)
 
+## TODO
+
+- Add try / except
+- Add sql connector
+- Add REAL changelog
+- Get track lenght
 
 ## License
 
