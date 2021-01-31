@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
 import os
@@ -38,10 +38,10 @@ def read_folder(folder):
 
 def get_track(i):
     j = i % len(bac)
-    print "i : %d" % i
-    print "j : %d" % j
+    print("i : %d" % i)
+    print("j : %d" % j)
     track = bac[i]
-    print track.artist
+    print(track.artist)
     playlist.append(track)
 
 read_folder(tracks_path)
@@ -62,7 +62,7 @@ if max_titles < separation_title:
 
 if len(error) != 0:
     for err in error:
-        print err
+        print(err)
     sys.exit(0)
 
 shuffle(bac)
